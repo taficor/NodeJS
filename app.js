@@ -5,14 +5,20 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var mongoose = require('mongoose');
-require('./modes/userModel');
-require('./modes/categoryModes');
+// require('./modes/userModel');
+require('./modes/CategoryModes');
 require('./modes/productModel');
 require('./modes/sinhvienModel');
 require('./modes/SinhVienL3Model');
 require('./modes/testModel');
 require('./modes/Upload');
 require('./modes/Gmail');
+require('./modes/loginModel');
+require('./modes/AddresModel');
+require('./modes/UserAppModel');
+require('./modes/SpeciesModel');
+require('./modes/PetModel');
+
 
 
 var indexRouter = require('./routes/index');
@@ -23,6 +29,14 @@ var svRouter=require('./routes/svs');
 var testRouter=require('./routes/tests');
 var uploadRouter=require('./routes/Uploads');
 var gmailRouter=require('./routes/gmails');
+var loginRouter=require('./routes/logins');
+var AddresRouter=require('./routes/addres');
+var UserRouter=require('./routes/UserApp');
+var CategoryRouter=require('./routes/category');
+var SpeciesRouter=require('./routes/Species');
+var PetRouter=require('./routes/Pets');
+
+
 
 
 var app = express();
@@ -50,6 +64,12 @@ app.use('/svs',svRouter);
 app.use('/tests',testRouter);
 app.use('/uploads',uploadRouter);
 app.use('/gmails',gmailRouter);
+app.use('/login',loginRouter);
+app.use('/addres',AddresRouter);
+app.use('/User',UserRouter);
+app.use('/Category',CategoryRouter);
+app.use('/Species',SpeciesRouter);
+app.use('/Pet',PetRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

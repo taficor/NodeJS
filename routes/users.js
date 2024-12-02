@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 //lấy toàn bộ danh sách user
 //locolhost:2002/users/all
-var userModel = require("../modes/userModel");
+var userModel = require("../modes/UserAppModel");
 const JWT = require('jsonwebtoken');
 const config = require("../fill/tokenConfig");
 
